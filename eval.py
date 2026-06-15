@@ -58,9 +58,12 @@ def run_evaluation(total_sessions: int = 10000):
     print(f"Traditional A/B Test Total Retention: {ab_retained_count} sessions")
     print(f"Multi-Armed Bandit Total Retention:    {bandit_retained_count} sessions")
     print(f"Additional Retained Sessions via MAB:   {bandit_retained_count - ab_retained_count}")
+    print("\n=== REGRET METRICS ===")
+    print(f"Cumulative A/B Test Regret: {cumulative_ab_regret}")
+    print(f"Cumulative Bandit Regret: {cumulative_bandit_regret}")
     print("========================================\n")
     #print(f"bandit_regret_over_time: {bandit_regret_over_time}")
-    print(f"cumulative_bandit_regret: {cumulative_bandit_regret}")
+    
     # --- 4. PLOT CUMULATIVE REGRET (SCIENTIFIC PROOF) ---
     plt.figure(figsize=(10, 6))
     plt.plot(ab_regret_over_time, label="Traditional Fixed A/B Test (Linear Regret)", color='red', linestyle='--')

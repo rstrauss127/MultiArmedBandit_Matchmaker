@@ -1,5 +1,4 @@
 import numpy as np
-from scipy.stats import beta
 
 """
 How the Math Works
@@ -32,7 +31,7 @@ class ThompsonSamplingBandit:
             self.alphas[queue_index] += 1
         else:
             self.betas[queue_index] += 1
-            
+
     def get_expected_probabilities(self) -> np.ndarray:
         """
         Returns the current expected conversion rate for each queue.
